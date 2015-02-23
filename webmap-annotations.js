@@ -1,7 +1,11 @@
 // ==UserScript==
 // @name        7DTD Webmap Annotations
 // @namespace   http://fienen.com
-// @include     http://*/static/index.html
+// @match       http://*/static/index.html
+// @downloadURL https://raw.githubusercontent.com/thequicksilver/7DTD-Webmap-Annotations/master/webmap-annotations.js
+// @run-at      document-end
+// @grant       GM_getValue
+// @grant       GM_setValue
 // @version     0.1
 // ==/UserScript==
 
@@ -12,31 +16,16 @@ $(document).ready( function() {
 	// ===============================================================================================
 	// Add Marker control
 
-	L.Control.AddMarker = L.Control.extend({
+	var AddMarkerBtn = L.Control.extend({
 		options: {
 			position: 'bottomleft'
 		},
 
 		onAdd: function (map) {
-			var name = 'control-addmarker',
+			var name = 'control-addmarkerbtn',
 			    container = L.DomUtil.create('div', name + ' leaflet-bar');
 
-			this._map = map;
-
-			this._reloadbutton = this._createButton(
-				"Add Marker", "Add Marker",
-				name + "-btn", container, this._reload, this);
-
 			return container;
-		},
-
-		onRemove: function (map) {
-		},
-
-		_reload: function (e) {
-			tileTime = new Date().getTime();
-			tileLayer.redraw();
-			tileLayerMiniMap.redraw();
 		},
 
 		_createButton: function (html, title, className, container, fn, context) {
@@ -60,8 +49,7 @@ $(document).ready( function() {
 
 	});
 
-	new L.Control.AddMarker({
-	}).addTo(map);
+	map.addControl(new AddMarkerBtn());
 
 	// Loading complete confirmation
 	console.log('7DTD Webmap Annotations initialization complete.');
