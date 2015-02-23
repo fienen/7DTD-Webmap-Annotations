@@ -5,13 +5,18 @@
 // @version     0.1
 // ==/UserScript==
 
+// Loading confirmation
+console.log('Initializing 7DTD Webmap Annotations script...');
+
 // ===============================================================================================
 // Add Marker control
 
 L.Control.AddMarker = L.Control.extend({
+	/*
 	options: {
 		position: 'bottomleft'
 	},
+	*/
 
 	onAdd: function (map) {
 		var name = 'control-addmarker',
@@ -58,3 +63,6 @@ L.Control.AddMarker = L.Control.extend({
 
 new L.Control.AddMarker({
 }).addTo(map);
+
+// Loading complete confirmation
+console.log('7DTD Webmap Annotations initialization complete.');
