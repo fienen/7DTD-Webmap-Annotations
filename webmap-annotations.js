@@ -13,11 +13,9 @@ $(document).ready( function() {
 	// Add Marker control
 
 	L.Control.AddMarker = L.Control.extend({
-		/*
 		options: {
 			position: 'bottomleft'
 		},
-		*/
 
 		onAdd: function (map) {
 			var name = 'control-addmarker',
