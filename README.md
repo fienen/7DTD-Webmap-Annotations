@@ -3,7 +3,8 @@ As of the latest build of 7 Days to Die (A10.4 b10), the included user game map 
 
 ## Requirements
 Usage of this script presumes you are doing the following:
-  * Running the latest version of Alloc's Dedicated Server Fixes ([https://7dtd.illy.bz/wiki/Server%20fixes]) on your 7 Days to Die server
+  * Running the latest version of Alloc's Dedicated Server Fixes (https://7dtd.illy.bz/wiki/Server%20fixes) on your 7 Days to Die server
+  * Have a browser new enough to support local storage (this shouldn't be a problem for anyone, though)
   * Install the Greasemonkey (Firefox) or Tampermonkey (Chrome) extension in your web browser
 
 ## Installation
